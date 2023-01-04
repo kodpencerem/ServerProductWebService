@@ -48,7 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\CustomerWebServiceConsumer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProductWebServiceConsumer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\TcknKpsService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -61,6 +71,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TcknKimlikDogrula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcknKimlikDogrula.Designer.cs">
+      <DependentUpon>TcknKimlikDogrula.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -73,6 +89,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TcknKimlikDogrula.resx">
+      <DependentUpon>TcknKimlikDogrula.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\CustomerWebServiceConsumer\ClientProductWebService.CustomerWebServiceConsumer.MusteriGetirResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomerWebServiceConsumer\ClientProductWebService.CustomerWebServiceConsumer.MusteriSonuc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomerWebServiceConsumer\CustomerWebService.wsdl" />
     <None Include="Connected Services\ProductWebServiceConsumer\ClientProductWebService.ProductWebServiceConsumer.UrunleriGetirResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -80,6 +106,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ProductWebServiceConsumer\ProductWebService.wsdl" />
+    <None Include="Connected Services\TcknKpsService\ClientProductWebService.TcknKpsService.TCKimlikNoDogrulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TcknKpsService\KPSPublic.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,7 +127,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CustomerWebServiceConsumer\" />
     <WCFMetadataStorage Include="Connected Services\ProductWebServiceConsumer\" />
+    <WCFMetadataStorage Include="Connected Services\TcknKpsService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ProductWebServiceConsumer\ProductWebService.disco" />
@@ -110,6 +142,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ProductWebServiceConsumer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomerWebServiceConsumer\CustomerWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomerWebServiceConsumer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomerWebServiceConsumer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomerWebServiceConsumer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TcknKpsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TcknKpsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TcknKpsService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MusteriConn">
+  <DataContextMoniker Name="/MusteriConnDataContext" />
+  <nestedChildShapes>
+    <classShape Id="aa7dcb0a-5604-4e4f-b0ec-d9e03c58ef66" absoluteBounds="1.5, 1.25, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/MusteriConnDataContext/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="621a89f9-83b7-4d1e-ac89-21deb1b8654c" absoluteBounds="1.5149999999999997, 1.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

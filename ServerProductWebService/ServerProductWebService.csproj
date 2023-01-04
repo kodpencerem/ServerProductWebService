@@ -68,10 +68,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CustomerWebService.asmx" />
     <Content Include="ProductWebService.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerWebService.asmx.cs">
+      <DependentUpon>CustomerWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MusteriConn.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusteriConn.dbml</DependentUpon>
+    </Compile>
     <Compile Include="ProductConn.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,6 +94,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MusteriConn.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MusteriConn.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MusteriConn.dbml.layout">
+      <DependentUpon>MusteriConn.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <Content Include="ProductConn.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

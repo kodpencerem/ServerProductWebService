@@ -1,12 +1,6 @@
-﻿using ClientProductWebService.ProductWebServiceConsumer;
+﻿using ClientProductWebService.CustomerWebServiceConsumer;
+using ClientProductWebService.ProductWebServiceConsumer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClientProductWebService
@@ -23,6 +17,19 @@ namespace ClientProductWebService
             ProductWebServiceSoapClient urungetir = new ProductWebServiceSoapClient();
 
             dataGridView1.DataSource = urungetir.UrunleriGetir();
+        }
+
+        private void btnMusteriGetir_Click(object sender, EventArgs e)
+        {
+            CustomerWebServiceSoapClient musteriGetir = new CustomerWebServiceSoapClient();
+            dataGridView1.DataSource = musteriGetir.MusteriGetir();
+        }
+
+        private void btnTcknSor_Click(object sender, EventArgs e)
+        {
+            TcknKimlikDogrula dogrula = new TcknKimlikDogrula();
+            dogrula.ShowDialog();
+
         }
     }
 }
