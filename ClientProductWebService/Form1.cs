@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientProductWebService.ProductWebServiceConsumer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace ClientProductWebService
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnUrunGetir_Click(object sender, EventArgs e)
+        {
+            ProductWebServiceSoapClient urungetir = new ProductWebServiceSoapClient();
+
+            dataGridView1.DataSource = urungetir.UrunleriGetir();
         }
     }
 }

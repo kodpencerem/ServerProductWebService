@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UrunleriGetir">
+        <s:complexType />
+      </s:element>
+      <s:element name="UrunleriGetirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UrunleriGetirResult" type="tns:ArrayOfUrunSonuc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUrunSonuc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UrunSonuc" nillable="true" type="tns:UrunSonuc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UrunSonuc">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UrunID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UrunAdi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fiyat" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stok" nillable="true" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UrunleriGetirSoapIn">
+    <wsdl:part name="parameters" element="tns:UrunleriGetir" />
+  </wsdl:message>
+  <wsdl:message name="UrunleriGetirSoapOut">
+    <wsdl:part name="parameters" element="tns:UrunleriGetirResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProductWebServiceSoap">
+    <wsdl:operation name="UrunleriGetir">
+      <wsdl:input message="tns:UrunleriGetirSoapIn" />
+      <wsdl:output message="tns:UrunleriGetirSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProductWebServiceSoap" type="tns:ProductWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UrunleriGetir">
+      <soap:operation soapAction="http://tempuri.org/UrunleriGetir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProductWebServiceSoap12" type="tns:ProductWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UrunleriGetir">
+      <soap12:operation soapAction="http://tempuri.org/UrunleriGetir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductWebService">
+    <wsdl:port name="ProductWebServiceSoap" binding="tns:ProductWebServiceSoap">
+      <soap:address location="https://localhost:44379/ProductWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProductWebServiceSoap12" binding="tns:ProductWebServiceSoap12">
+      <soap12:address location="https://localhost:44379/ProductWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
